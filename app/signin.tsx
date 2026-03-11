@@ -1,16 +1,15 @@
-import React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
 import {
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
   Text,
   TextInput,
-  Pressable,
-  StyleSheet,
-  ScrollView,
-  SafeAreaView,
   View,
 } from "react-native";
-import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const signInSchema = z.object({
   email: z.string().email("Enter a valid email"),
